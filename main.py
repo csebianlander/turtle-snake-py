@@ -2,7 +2,7 @@ from turtle import Screen, Turtle
 from snake import Snake
 import time
 
-SPEED = 0.2
+SPEED = 0.1
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -22,3 +22,4 @@ game_over = False
 while not game_over:
     screen.update()
     time.sleep(SPEED)
+    snake.move()

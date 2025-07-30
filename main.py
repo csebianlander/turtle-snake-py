@@ -8,9 +8,6 @@ import time
 
 SPEED = 0.1
 
-# Screen set up
-
-
 def start_game():
     screen = Screen()
     screen.clear()
@@ -44,14 +41,16 @@ def start_game():
 
         # Detect collision with wall
         if abs(snake.head.xcor()) > 280 or abs(snake.head.ycor()) > 280:
-            game_over = True
-            scoreboard.game_over()
+            # game_over = True
+            scoreboard.reset()
+            snake.reset()
 
         # Detect collision with self
         for segment in snake.segments[1:]:
             if snake.head.distance(segment) < 10:
-                game_over = True
-                scoreboard.game_over()
+                # game_over = True
+                scoreboard.reset()
+                snake.reset()
 
     screen.exitonclick()
 
